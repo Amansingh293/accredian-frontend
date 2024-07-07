@@ -24,7 +24,7 @@ const Modal = ({ modalOpen, setModalOpen }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/referrals", {
+      const response = await axios.post("https://accredian-backend-1qgc.onrender.com/referrals", {
         referrerName: reffereralObject.referrerName,
         referrerEmail: reffereralObject.referrerEmail,
         refereeName: reffereralObject.refereeEmail,
