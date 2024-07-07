@@ -43,7 +43,7 @@ const HomePage = () => {
 
         <Footer />
       </div>
-      {modalOpen && <Modal />}
+      {modalOpen && <Modal  modalOpen={modalOpen} setModalOpen={setModalOpen} />}
     </>
   );
 };

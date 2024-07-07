@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Modal = () => {
+const Modal = ({ modalOpen, setModalOpen }) => {
   const [reffereralObject, setReffereralObject] = useState({
     refereeEmail: "",
     refereeName: "",
@@ -30,9 +30,11 @@ const Modal = () => {
         refereeName: reffereralObject.refereeEmail,
         refereeEmail: reffereralObject.refereeEmail,
       });
-      console.log(response);
       setSuccess("Referral submitted successfully!");
       setError("");
+
+      setTimeout(() => setModalOpen(!modalOpen), 1000);
+
       setReffereralObject({
         refereeEmail: "",
         refereeName: "",
@@ -58,7 +60,10 @@ const Modal = () => {
               type="text"
               value={reffereralObject.referrerName}
               onChange={(e) =>
-                setReffereralObject({ ...reffereralObject, referrerName: e.target.value })
+                setReffereralObject({
+                  ...reffereralObject,
+                  referrerName: e.target.value,
+                })
               }
               className="mt-1 p-2 w-full border rounded-md"
             />
@@ -69,7 +74,10 @@ const Modal = () => {
               type="email"
               value={reffereralObject.referrerEmail}
               onChange={(e) =>
-                setReffereralObject({ ...reffereralObject, referrerEmail: e.target.value })
+                setReffereralObject({
+                  ...reffereralObject,
+                  referrerEmail: e.target.value,
+                })
               }
               className="mt-1 p-2 w-full border rounded-md"
             />
@@ -80,7 +88,10 @@ const Modal = () => {
               type="text"
               value={reffereralObject.refereeName}
               onChange={(e) =>
-                setReffereralObject({ ...reffereralObject, refereeName: e.target.value })
+                setReffereralObject({
+                  ...reffereralObject,
+                  refereeName: e.target.value,
+                })
               }
               className="mt-1 p-2 w-full border rounded-md"
             />
@@ -91,7 +102,10 @@ const Modal = () => {
               type="email"
               value={reffereralObject.refereeEmail}
               onChange={(e) =>
-                setReffereralObject({ ...reffereralObject, refereeEmail: e.target.value })
+                setReffereralObject({
+                  ...reffereralObject,
+                  refereeEmail: e.target.value,
+                })
               }
               className="mt-1 p-2 w-full border rounded-md"
             />
